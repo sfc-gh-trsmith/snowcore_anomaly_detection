@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="500" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#29B5E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a8bb8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c44545;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="yellowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F39C12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c77c0e;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="6" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <rect width="1200" height="500" fill="#0f172a"/>
+  
+  <text x="600" y="45" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="#f1f5f9">The Manufacturing Blind Spot: Hidden Costs of Reactive Maintenance</text>
+  
+  <g transform="translate(60, 90)" filter="url(#shadow)">
+    <rect width="340" height="180" rx="16" fill="#1e293b"/>
+    <rect width="340" height="6" rx="3" fill="url(#redGrad)"/>
+    <text x="170" y="50" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#94a3b8">ANNUAL DOWNTIME COST</text>
+    <text x="170" y="100" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" fill="#FF6B6B">$1.2M</text>
+    <text x="170" y="130" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#64748b">per mid-size plant</text>
+    <text x="170" y="160" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">from preventable failures</text>
+  </g>
+  
+  <g transform="translate(430, 90)" filter="url(#shadow)">
+    <rect width="340" height="180" rx="16" fill="#1e293b"/>
+    <rect width="340" height="6" rx="3" fill="url(#yellowGrad)"/>
+    <text x="170" y="50" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#94a3b8">HIDDEN CORRELATIONS</text>
+    <text x="170" y="100" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" fill="#F39C12">73%</text>
+    <text x="170" y="130" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#64748b">of composite failures</text>
+    <text x="170" y="160" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">from conditions 6+ hours earlier</text>
+  </g>
+  
+  <g transform="translate(800, 90)" filter="url(#shadow)">
+    <rect width="340" height="180" rx="16" fill="#1e293b"/>
+    <rect width="340" height="6" rx="3" fill="url(#blueGrad)"/>
+    <text x="170" y="50" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#94a3b8">DATA SILOS</text>
+    <text x="170" y="100" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" fill="#29B5E8">12+</text>
+    <text x="170" y="130" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#64748b">disconnected systems</text>
+    <text x="170" y="160" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">average manufacturer operates</text>
+  </g>
+  
+  <g transform="translate(60, 300)" filter="url(#shadow)">
+    <rect width="1080" height="160" rx="16" fill="#1e293b" stroke="#FF6B6B" stroke-width="2" stroke-opacity="0.3"/>
+    <text x="40" y="40" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#f1f5f9">Real-World Impact: Q3 2023 Aerospace Incident</text>
+    
+    <text x="40" y="75" font-family="Inter, Arial, sans-serif" font-size="13" fill="#94a3b8">A major composite manufacturer lost</text>
+    <text x="277" y="75" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#FF6B6B">$47M in a single quarter</text>
+    <text x="470" y="75" font-family="Inter, Arial, sans-serif" font-size="13" fill="#94a3b8">when undetected humidity in layup room</text>
+    
+    <text x="40" y="100" font-family="Inter, Arial, sans-serif" font-size="13" fill="#94a3b8">caused systematic delamination across</text>
+    <text x="295" y="100" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#F39C12">340 autoclave batches</text>
+    <text x="480" y="100" font-family="Inter, Arial, sans-serif" font-size="13" fill="#94a3b8">over 11 weeks.</text>
+    
+    <rect x="700" y="60" width="340" height="80" rx="12" fill="#0f172a"/>
+    <text x="870" y="90" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#64748b">ROOT CAUSE</text>
+    <text x="870" y="115" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#f1f5f9">6-hour time lag between humidity</text>
+    <text x="870" y="135" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#f1f5f9">exposure and cure failure</text>
+  </g>
+</svg>

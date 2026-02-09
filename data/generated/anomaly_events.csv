@@ -1,0 +1,51 @@
+EVENT_ID,ASSET_ID,TIMESTAMP,ANOMALY_TYPE,ANOMALY_SCORE,SEVERITY,ROOT_CAUSE,SUGGESTED_FIX,RESOLVED
+ANO-00001,CNC_MILL_02,2025-12-25T23:35:24.259493,HUMIDITY_ALERT,0.65,MEDIUM,HVAC capacity issue,Review humidity alert procedure,True
+ANO-00002,LAYUP_BOT_01,2025-11-24T05:35:24.259493,PRESSURE_DROP,0.78,HIGH,Pressure relief valve leak,Review pressure drop procedure,False
+ANO-00003,CNC_MILL_01,2026-01-21T22:35:24.259493,PRESSURE_DROP,0.71,HIGH,Pressure relief valve leak,Review pressure drop procedure,True
+ANO-00004,AUTOCLAVE_02,2026-01-20T19:35:24.259493,VIBRATION_SPIKE,0.64,LOW,Spindle imbalance,Review vibration spike procedure,True
+ANO-00005,LAYUP_BOT_02,2025-12-03T02:35:24.259493,VIBRATION_SPIKE,0.66,LOW,Spindle imbalance,Review vibration spike procedure,True
+ANO-00006,LAYUP_BOT_01,2025-12-30T17:35:24.259493,VACUUM_LEAK,0.77,HIGH,Vacuum seal degradation,Review vacuum leak procedure,True
+ANO-00007,CNC_MILL_02,2025-12-06T05:35:24.259493,VACUUM_LEAK,0.86,HIGH,Vacuum seal degradation,Review vacuum leak procedure,True
+ANO-00008,CNC_MILL_01,2026-01-19T07:35:24.259493,VIBRATION_SPIKE,0.83,LOW,Spindle imbalance,Review vibration spike procedure,True
+ANO-00009,AUTOCLAVE_01,2026-01-04T06:35:24.259493,VIBRATION_SPIKE,0.66,LOW,Spindle imbalance,Review vibration spike procedure,True
+ANO-00010,LAYUP_BOT_02,2026-01-05T19:35:24.259493,HUMIDITY_ALERT,0.87,MEDIUM,HVAC capacity issue,Review humidity alert procedure,True
+ANO-00011,CNC_MILL_02,2025-11-12T20:35:24.259493,HUMIDITY_ALERT,0.96,MEDIUM,HVAC capacity issue,Review humidity alert procedure,True
+ANO-00012,CNC_MILL_02,2025-12-30T18:35:24.259493,VACUUM_LEAK,0.82,HIGH,Vacuum seal degradation,Review vacuum leak procedure,True
+ANO-00013,CNC_MILL_01,2025-11-27T18:35:24.259493,PRESSURE_DROP,0.99,HIGH,Pressure relief valve leak,Review pressure drop procedure,True
+ANO-00014,AUTOCLAVE_01,2026-01-09T15:35:24.259493,TEMP_EXCURSION,0.91,MEDIUM,Heater element drift,Review temp excursion procedure,True
+ANO-00015,AUTOCLAVE_01,2025-12-18T00:35:24.259493,TEMP_EXCURSION,0.92,MEDIUM,Heater element drift,Review temp excursion procedure,True
+ANO-00016,LAYUP_BOT_01,2025-11-24T02:35:24.259493,VACUUM_LEAK,0.76,HIGH,Vacuum seal degradation,Review vacuum leak procedure,True
+ANO-00017,QC_STATION_01,2026-01-20T05:35:24.259493,PRESSURE_DROP,0.79,HIGH,Pressure relief valve leak,Review pressure drop procedure,True
+ANO-00018,QC_STATION_02,2026-01-24T19:35:24.259493,TEMP_EXCURSION,0.9,MEDIUM,Heater element drift,Review temp excursion procedure,True
+ANO-00019,QC_STATION_01,2025-11-28T01:35:24.259493,VACUUM_LEAK,0.75,HIGH,Vacuum seal degradation,Review vacuum leak procedure,False
+ANO-00020,CNC_MILL_01,2025-12-21T16:35:24.259493,VIBRATION_SPIKE,0.85,LOW,Spindle imbalance,Review vibration spike procedure,False
+ANO-00021,CNC_MILL_01,2026-02-06T15:35:24.259493,HUMIDITY_ALERT,0.82,MEDIUM,HVAC capacity issue,Review humidity alert procedure,True
+ANO-00022,LAYUP_BOT_01,2026-01-18T17:35:24.259493,TEMP_EXCURSION,0.97,MEDIUM,Heater element drift,Review temp excursion procedure,True
+ANO-00023,LAYUP_BOT_02,2026-01-08T07:35:24.259493,VACUUM_LEAK,0.86,HIGH,Vacuum seal degradation,Review vacuum leak procedure,True
+ANO-00024,AUTOCLAVE_02,2025-11-10T23:35:24.259493,TEMP_EXCURSION,0.92,MEDIUM,Heater element drift,Review temp excursion procedure,False
+ANO-00025,CNC_MILL_02,2026-01-22T05:35:24.259493,VACUUM_LEAK,0.76,HIGH,Vacuum seal degradation,Review vacuum leak procedure,True
+ANO-00026,AUTOCLAVE_01,2025-11-11T01:35:24.259493,VIBRATION_SPIKE,0.76,LOW,Spindle imbalance,Review vibration spike procedure,False
+ANO-00027,LAYUP_BOT_02,2025-12-19T03:35:24.259493,PRESSURE_DROP,0.64,HIGH,Pressure relief valve leak,Review pressure drop procedure,True
+ANO-00028,AUTOCLAVE_01,2025-11-30T00:35:24.259493,TEMP_EXCURSION,0.7,MEDIUM,Heater element drift,Review temp excursion procedure,True
+ANO-00029,LAYUP_BOT_01,2025-12-18T04:35:24.259493,TEMP_EXCURSION,0.84,MEDIUM,Heater element drift,Review temp excursion procedure,True
+ANO-00030,QC_STATION_01,2025-11-11T16:35:24.259493,PRESSURE_DROP,0.64,HIGH,Pressure relief valve leak,Review pressure drop procedure,True
+ANO-00031,LAYUP_BOT_02,2025-12-19T23:35:24.259493,VIBRATION_SPIKE,0.62,LOW,Spindle imbalance,Review vibration spike procedure,True
+ANO-00032,QC_STATION_01,2026-01-23T22:35:24.259493,VIBRATION_SPIKE,0.97,LOW,Spindle imbalance,Review vibration spike procedure,True
+ANO-00033,QC_STATION_01,2025-12-19T05:35:24.259493,HUMIDITY_ALERT,0.63,MEDIUM,HVAC capacity issue,Review humidity alert procedure,True
+ANO-00034,CNC_MILL_01,2026-01-28T22:35:24.259493,VACUUM_LEAK,0.82,HIGH,Vacuum seal degradation,Review vacuum leak procedure,True
+ANO-00035,AUTOCLAVE_01,2025-11-20T22:35:24.259493,HUMIDITY_ALERT,0.72,MEDIUM,HVAC capacity issue,Review humidity alert procedure,True
+ANO-00036,AUTOCLAVE_01,2025-11-19T07:35:24.259493,TEMP_EXCURSION,0.75,MEDIUM,Heater element drift,Review temp excursion procedure,False
+ANO-00037,QC_STATION_02,2025-12-10T04:35:24.259493,HUMIDITY_ALERT,0.62,MEDIUM,HVAC capacity issue,Review humidity alert procedure,False
+ANO-00038,LAYUP_BOT_01,2026-01-27T00:35:24.259493,TEMP_EXCURSION,0.62,MEDIUM,Heater element drift,Review temp excursion procedure,False
+ANO-00039,CNC_MILL_02,2025-12-12T23:35:24.259493,VIBRATION_SPIKE,0.93,LOW,Spindle imbalance,Review vibration spike procedure,True
+ANO-00040,AUTOCLAVE_01,2026-01-13T00:35:24.259493,VACUUM_LEAK,0.89,HIGH,Vacuum seal degradation,Review vacuum leak procedure,True
+ANO-00041,LAYUP_BOT_02,2025-12-16T17:35:24.259493,VIBRATION_SPIKE,0.92,LOW,Spindle imbalance,Review vibration spike procedure,True
+ANO-00042,CNC_MILL_02,2025-12-14T04:35:24.259493,TEMP_EXCURSION,0.94,MEDIUM,Heater element drift,Review temp excursion procedure,False
+ANO-00043,CNC_MILL_01,2026-01-28T23:35:24.259493,VIBRATION_SPIKE,0.7,LOW,Spindle imbalance,Review vibration spike procedure,False
+ANO-00044,CNC_MILL_02,2025-12-21T21:35:24.259493,VIBRATION_SPIKE,0.61,LOW,Spindle imbalance,Review vibration spike procedure,True
+ANO-00045,QC_STATION_02,2026-01-29T15:35:24.259493,HUMIDITY_ALERT,0.6,MEDIUM,HVAC capacity issue,Review humidity alert procedure,True
+ANO-00046,QC_STATION_02,2025-12-01T04:35:24.259493,HUMIDITY_ALERT,0.9,MEDIUM,HVAC capacity issue,Review humidity alert procedure,True
+ANO-00047,LAYUP_BOT_01,2026-01-30T17:35:24.259493,HUMIDITY_ALERT,0.95,MEDIUM,HVAC capacity issue,Review humidity alert procedure,False
+ANO-00048,QC_STATION_01,2026-01-03T18:35:24.259493,PRESSURE_DROP,0.92,HIGH,Pressure relief valve leak,Review pressure drop procedure,True
+ANO-00049,QC_STATION_02,2025-11-30T15:35:24.259493,VACUUM_LEAK,0.74,HIGH,Vacuum seal degradation,Review vacuum leak procedure,True
+ANO-00050,CNC_MILL_01,2025-11-09T22:35:24.259493,VACUUM_LEAK,0.87,HIGH,Vacuum seal degradation,Review vacuum leak procedure,True

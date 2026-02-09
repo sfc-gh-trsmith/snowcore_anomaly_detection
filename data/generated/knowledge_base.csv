@@ -1,0 +1,95 @@
+DOC_TYPE,ASSET_MODEL,COMPONENT_SECTION,ERROR_CODE,TITLE,CONTENT,SOURCE_FILE,CHUNK_INDEX
+MANUAL,AUTOCLAVE_2000,Vacuum System,VAC-001,Vacuum Seal Replacement Procedure,"Vacuum Seal B Replacement Procedure for Autoclave 2000 Series:
+            
+1. Safety: Ensure autoclave is at ambient temperature and pressure. Lock out power.
+2. Access: Remove the 8 hex bolts on the door seal housing using 13mm socket.
+3. Inspection: Check seal groove for debris or damage. Clean with isopropyl alcohol.
+4. Installation: Install new Vacuum Seal B (Part #VS-2847) starting at 12 o'clock position.
+5. Verification: Apply vacuum to -0.95 bar and hold for 15 minutes. Accept if leak rate < 0.01 mbar/min.
+6. Documentation: Record seal replacement in CMMS with batch traceability.
+
+Common failure modes: Seal degradation from thermal cycling, contamination from resin outgassing.
+Expected life: 500-800 cure cycles depending on operating conditions.",AUTOCLAVE_2000_MAINTENANCE_MANUAL.pdf,0
+MANUAL,CNC_MILL_5000,Spindle Assembly,VIB-001,Spindle Vibration Calibration,"Spindle Vibration Sensor Calibration for CNC Mill 5000:
+            
+1. Prerequisites: Machine at operating temperature (min 30 min warmup). No tooling installed.
+2. Access calibration mode: Control Panel > Service > Calibration > Spindle
+3. Run baseline: Execute spindle ramp 0-12000 RPM over 60 seconds
+4. Capture readings: Record vibration at 3000, 6000, 9000, 12000 RPM
+5. Thresholds: 
+   - Normal: < 0.3 G peak
+   - Warning: 0.3-0.5 G peak
+   - Critical: > 0.5 G peak
+6. If above threshold, check spindle bearing preload and balance.
+
+Typical causes of elevated vibration: Bearing wear, coolant contamination, imbalanced toolholder.",CNC_MILL_5000_CALIBRATION_GUIDE.pdf,1
+CMMS_LOG,AUTOCLAVE_2000,Vacuum System,VAC-001,WO-20230915-047 Vacuum Leak Resolution,"Work Order: WO-20230915-047
+Date: September 15, 2023
+Asset: AUTOCLAVE_02
+Technician: Mike Rodriguez
+
+Problem: Vacuum decay rate exceeded 0.05 mbar/min during cure cycle. Batch BATCH-20230915-03 aborted.
+
+Investigation: 
+- Visual inspection found scoring on door seal groove
+- Seal B showed hardening and cracking (1247 cycles since last replacement)
+- No contamination detected in vacuum lines
+
+Resolution:
+- Replaced Vacuum Seal B with Part #VS-2847 (Lot: 2023-Q3-042)
+- Cleaned and polished seal groove
+- Verified vacuum hold: 0.008 mbar/min (within spec)
+
+Root Cause: Extended seal life beyond recommended interval due to supply chain delay.
+
+Recommendation: Increase safety stock of vacuum seals to prevent future delays.
+
+Downtime: 2 hours 15 minutes
+Parts Cost: $847
+Labor Cost: $225",CMMS_EXPORT_2023Q3.json,2
+CMMS_LOG,LAYUP_ROOM,HVAC,HUM-001,WO-20231022-089 Humidity Excursion Investigation,"Work Order: WO-20231022-089
+Date: October 22, 2023
+Asset: LAYUP_ROOM
+Technician: Sarah Chen
+
+Problem: Multiple batches from October 21-22 showing elevated delamination scores. 
+QC flagged 6 batches for rework.
+
+Investigation:
+- Reviewed sensor data: Humidity peaked at 72% during 8am-12pm shift
+- HVAC system running at capacity but unable to maintain setpoint
+- Weather data showed unusual humidity spike (external 85% RH)
+- Correlated affected batches to high-humidity layup window
+
+Resolution:
+- Adjusted HVAC dehumidification setpoint from 55% to 50%
+- Added supplemental portable dehumidifier to layup area
+- Implemented humidity trending alert at 60% threshold
+
+Root Cause: HVAC sizing inadequate for extreme weather events. 
+Correlation confirmed between layup humidity >65% and cure defects.
+
+Cost Impact: 6 batches reworked @ $12,000 each = $72,000
+Recommended CapEx: HVAC capacity upgrade ($150,000)
+Payback: <3 months at current defect rate",CMMS_EXPORT_2023Q4.json,3
+SOP,AUTOCLAVE_2000,Cure Cycle,,Golden Batch Cure Profile for Avalanche X1,"Standard Operating Procedure: Avalanche X1 Cure Cycle
+Document: SOP-CURE-001 Rev 3.2
+
+Golden Batch Parameters:
+- Ramp Rate: 2°C/min to 180°C
+- Dwell: 120 minutes at 180°C ± 3°C
+- Pressure: 100 psi ± 5 psi
+- Vacuum: -0.95 bar minimum
+- Cool Down: 3°C/min to 60°C before door open
+
+Critical Control Points:
+1. Pre-cure vacuum test: Must hold -0.95 bar for 5 min with <0.02 mbar/min leak rate
+2. Temperature uniformity: All zones within ±3°C during dwell
+3. Exotherm monitoring: If part temp exceeds bag temp by >10°C, extend dwell
+
+Quality Gates:
+- Delamination Score threshold: <25 (pass), 25-50 (review), >50 (reject)
+- Void Content: <2% by volume
+- Glass Transition Temp: >195°C (DMA verification)
+
+Batch Release Criteria: All parameters within spec AND traceability complete.",SOP_CURE_AVALANCHE_X1.pdf,4

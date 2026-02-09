@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#29B5E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a8bb8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#30D158;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22a045;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="6" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <rect width="1200" height="700" fill="#0f172a"/>
+  
+  <!-- Snowflake Logo top right -->
+  <g transform="translate(1100, 25) scale(0.8)">
+    <path fill="#29B5E8" d="M59.4,31.1c0-0.4-0.3-0.8-0.6-1.1l-5.8-3.2l6-3.9c0.4-0.2,0.6-0.7,0.6-1.1c0-0.4-0.3-0.8-0.6-1.1L32.4,6.1c-0.4-0.2-0.8-0.2-1.2,0l-26,14.5c-0.4,0.2-0.6,0.6-0.6,1c0,0.4,0.2,0.9,0.6,1.1l6,3.9l-6,3.3c-0.4,0.2-0.6,0.6-0.6,1.1c0,0.4,0.2,0.9,0.6,1.1l5.9,3.7l-5.8,3.2c-0.4,0.2-0.6,0.6-0.6,1.1c0,0.4,0.2,0.9,0.6,1.1l26.3,16.6c0.2,0.1,0.4,0.2,0.7,0.2c0.2,0,0.5-0.1,0.7-0.2l26.2-16.6c0.4-0.2,0.6-0.7,0.6-1.1c0-0.4-0.3-0.8-0.6-1.1l-5.8-3.2l5.9-3.7C59.2,31.9,59.4,31.5,59.4,31.1z M31.8,8.6l24.1,13.3L32,37.3L8.2,21.8L31.8,8.6z M50.6,37.4l5.1,2.8L32,55.4L8.2,40.3l5.2-2.9l18,11.4c0.2,0.1,0.4,0.2,0.7,0.2c0.2,0,0.5-0.1,0.7-0.2L50.6,37.4C50.5,37.4,50.5,37.4,50.6,37.4z M32,46.2L8.2,31.2l5.3-2.9c0,0,0,0,0,0l17.8,11.6c0.2,0.1,0.4,0.2,0.7,0.2c0.2,0,0.5-0.1,0.7-0.2l17.9-11.5c0,0,0,0,0,0l5.1,2.8L32,46.2z"/>
+  </g>
+  
+  <text x="600" y="50" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="#f1f5f9">Predictive Maintenance: Industry Benchmark Improvements</text>
+  <text x="600" y="80" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#64748b">Well-implemented programs deliver measurable results</text>
+  
+  <!-- Header Row -->
+  <rect x="80" y="110" width="440" height="45" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="300" y="140" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#94a3b8" letter-spacing="1">METRIC</text>
+  
+  <rect x="530" y="110" width="200" height="45" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="630" y="140" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#94a3b8" letter-spacing="1">TYPICAL</text>
+  
+  <rect x="740" y="110" width="200" height="45" rx="8" fill="#29B5E8" filter="url(#shadow)"/>
+  <text x="840" y="140" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f172a" letter-spacing="1">BEST-IN-CLASS</text>
+  
+  <rect x="950" y="110" width="170" height="45" rx="8" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="1035" y="140" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" fill="#94a3b8" letter-spacing="1">DIRECTION</text>
+
+  <!-- Row 1: Unplanned Downtime -->
+  <rect x="80" y="165" width="440" height="85" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+  <rect x="80" y="165" width="6" height="85" rx="3" fill="#30D158"/>
+  <text x="110" y="200" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#f1f5f9">Unplanned Downtime</text>
+  <text x="110" y="225" font-family="Inter, Arial, sans-serif" font-size="12" fill="#64748b">Production availability gains</text>
+  
+  <rect x="530" y="165" width="200" height="85" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="630" y="205" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#30D158">30-40%</text>
+  <text x="630" y="230" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#64748b">reduction</text>
+  
+  <rect x="740" y="165" width="200" height="85" rx="12" fill="#0d2d3a" stroke="#29B5E8" stroke-width="2" filter="url(#shadow)"/>
+  <text x="840" y="205" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#29B5E8">50%</text>
+  <text x="840" y="230" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#29B5E8">reduction</text>
+  
+  <rect x="950" y="165" width="170" height="85" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="1035" y="215" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700" fill="#30D158">↓</text>
+
+  <!-- Row 2: Maintenance Costs -->
+  <rect x="80" y="260" width="440" height="85" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+  <rect x="80" y="260" width="6" height="85" rx="3" fill="#29B5E8"/>
+  <text x="110" y="295" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#f1f5f9">Maintenance Costs</text>
+  <text x="110" y="320" font-family="Inter, Arial, sans-serif" font-size="12" fill="#64748b">Labor and parts efficiency</text>
+  
+  <rect x="530" y="260" width="200" height="85" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="630" y="300" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#30D158">20-30%</text>
+  <text x="630" y="325" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#64748b">reduction</text>
+  
+  <rect x="740" y="260" width="200" height="85" rx="12" fill="#0d2d3a" stroke="#29B5E8" stroke-width="2" filter="url(#shadow)"/>
+  <text x="840" y="300" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#29B5E8">40%</text>
+  <text x="840" y="325" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#29B5E8">reduction</text>
+  
+  <rect x="950" y="260" width="170" height="85" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="1035" y="310" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700" fill="#30D158">↓</text>
+
+  <!-- Row 3: MTBF -->
+  <rect x="80" y="355" width="440" height="85" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+  <rect x="80" y="355" width="6" height="85" rx="3" fill="#F39C12"/>
+  <text x="110" y="390" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#f1f5f9">Mean Time Between Failures</text>
+  <text x="110" y="415" font-family="Inter, Arial, sans-serif" font-size="12" fill="#64748b">Asset reliability improvement</text>
+  
+  <rect x="530" y="355" width="200" height="85" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="630" y="395" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#30D158">15-25%</text>
+  <text x="630" y="420" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#64748b">increase</text>
+  
+  <rect x="740" y="355" width="200" height="85" rx="12" fill="#0d2d3a" stroke="#29B5E8" stroke-width="2" filter="url(#shadow)"/>
+  <text x="840" y="395" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#29B5E8">35%</text>
+  <text x="840" y="420" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#29B5E8">increase</text>
+  
+  <rect x="950" y="355" width="170" height="85" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="1035" y="405" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700" fill="#30D158">↑</text>
+
+  <!-- Row 4: Spare Parts -->
+  <rect x="80" y="450" width="440" height="85" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+  <rect x="80" y="450" width="6" height="85" rx="3" fill="#8B5CF6"/>
+  <text x="110" y="485" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#f1f5f9">Spare Parts Inventory</text>
+  <text x="110" y="510" font-family="Inter, Arial, sans-serif" font-size="12" fill="#64748b">Working capital optimization</text>
+  
+  <rect x="530" y="450" width="200" height="85" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="630" y="490" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#30D158">10-20%</text>
+  <text x="630" y="515" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#64748b">reduction</text>
+  
+  <rect x="740" y="450" width="200" height="85" rx="12" fill="#0d2d3a" stroke="#29B5E8" stroke-width="2" filter="url(#shadow)"/>
+  <text x="840" y="490" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#29B5E8">30%</text>
+  <text x="840" y="515" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#29B5E8">reduction</text>
+  
+  <rect x="950" y="450" width="170" height="85" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="1035" y="500" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700" fill="#30D158">↓</text>
+
+  <!-- Row 5: First-Pass Yield -->
+  <rect x="80" y="545" width="440" height="85" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+  <rect x="80" y="545" width="6" height="85" rx="3" fill="#EC4899"/>
+  <text x="110" y="580" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="600" fill="#f1f5f9">First-Pass Yield</text>
+  <text x="110" y="605" font-family="Inter, Arial, sans-serif" font-size="12" fill="#64748b">Quality and scrap reduction</text>
+  
+  <rect x="530" y="545" width="200" height="85" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="630" y="585" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#30D158">5-10%</text>
+  <text x="630" y="610" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#64748b">improvement</text>
+  
+  <rect x="740" y="545" width="200" height="85" rx="12" fill="#0d2d3a" stroke="#29B5E8" stroke-width="2" filter="url(#shadow)"/>
+  <text x="840" y="585" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700" fill="#29B5E8">15%</text>
+  <text x="840" y="610" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#29B5E8">improvement</text>
+  
+  <rect x="950" y="545" width="170" height="85" rx="12" fill="#1e293b" filter="url(#shadow)"/>
+  <text x="1035" y="595" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700" fill="#30D158">↑</text>
+
+  <!-- Source citation -->
+  <text x="600" y="670" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" fill="#64748b">Source: Society for Maintenance and Reliability Professionals (SMRP), Best Practices Benchmark Report, 2024</text>
+</svg>

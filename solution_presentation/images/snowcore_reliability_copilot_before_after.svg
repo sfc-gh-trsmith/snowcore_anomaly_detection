@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#29B5E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a8bb8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#30D158;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22a045;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c44545;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="6" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <rect width="1200" height="600" fill="#0f172a"/>
+  
+  <text x="600" y="45" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700" fill="#f1f5f9">The Transformation: From Reactive to Predictive</text>
+  
+  <g transform="translate(40, 80)" filter="url(#shadow)">
+    <rect width="540" height="480" rx="16" fill="#1e293b"/>
+    <rect width="540" height="50" rx="16" fill="url(#redGrad)"/>
+    <rect width="540" height="16" y="34" fill="#1e293b"/>
+    <text x="270" y="33" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="white">BEFORE: Reactive Maintenance</text>
+    
+    <g transform="translate(30, 80)">
+      <circle cx="15" cy="12" r="8" fill="#FF6B6B" opacity="0.3"/>
+      <circle cx="15" cy="12" r="4" fill="#FF6B6B"/>
+      <text x="35" y="17" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#f1f5f9">Anomaly Detection</text>
+      <text x="35" y="40" font-family="Inter, Arial, sans-serif" font-size="12" fill="#94a3b8">Threshold alerts with no context</text>
+      <text x="35" y="58" font-family="Inter, Arial, sans-serif" font-size="12" fill="#64748b">500+ daily alerts, &lt;5% actionable</text>
+    </g>
+    
+    <g transform="translate(30, 155)">
+      <circle cx="15" cy="12" r="8" fill="#FF6B6B" opacity="0.3"/>
+      <circle cx="15" cy="12" r="4" fill="#FF6B6B"/>
+      <text x="35" y="17" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#f1f5f9">Maintenance Prioritization</text>
+      <text x="35" y="40" font-family="Inter, Arial, sans-serif" font-size="12" fill="#94a3b8">First-in-first-out queue</text>
+      <text x="35" y="58" font-family="Inter, Arial, sans-serif" font-size="12" fill="#64748b">No economic ranking of urgency</text>
+    </g>
+    
+    <g transform="translate(30, 230)">
+      <circle cx="15" cy="12" r="8" fill="#FF6B6B" opacity="0.3"/>
+      <circle cx="15" cy="12" r="4" fill="#FF6B6B"/>
+      <text x="35" y="17" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#f1f5f9">Knowledge Access</text>
+      <text x="35" y="40" font-family="Inter, Arial, sans-serif" font-size="12" fill="#94a3b8">Manual search through PDFs and logs</text>
+      <text x="35" y="58" font-family="Inter, Arial, sans-serif" font-size="12" fill="#64748b">Hours to find similar past incidents</text>
+    </g>
+    
+    <g transform="translate(30, 305)">
+      <circle cx="15" cy="12" r="8" fill="#FF6B6B" opacity="0.3"/>
+      <circle cx="15" cy="12" r="4" fill="#FF6B6B"/>
+      <text x="35" y="17" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#f1f5f9">Root Cause Discovery</text>
+      <text x="35" y="40" font-family="Inter, Arial, sans-serif" font-size="12" fill="#94a3b8">Weeks of investigation</text>
+      <text x="35" y="58" font-family="Inter, Arial, sans-serif" font-size="12" fill="#64748b">Time-lagged correlations invisible</text>
+    </g>
+    
+    <g transform="translate(30, 380)">
+      <circle cx="15" cy="12" r="8" fill="#FF6B6B" opacity="0.3"/>
+      <circle cx="15" cy="12" r="4" fill="#FF6B6B"/>
+      <text x="35" y="17" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#f1f5f9">Financial Visibility</text>
+      <text x="35" y="40" font-family="Inter, Arial, sans-serif" font-size="12" fill="#94a3b8">Cost centers only</text>
+      <text x="35" y="58" font-family="Inter, Arial, sans-serif" font-size="12" fill="#64748b">No per-asset expected loss</text>
+    </g>
+  </g>
+  
+  <g transform="translate(565, 280)">
+    <polygon points="35,0 70,25 35,50 0,25" fill="#29B5E8"/>
+    <text x="35" y="32" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="white">→</text>
+  </g>
+  
+  <g transform="translate(620, 80)" filter="url(#shadow)">
+    <rect width="540" height="480" rx="16" fill="#1e293b"/>
+    <rect width="540" height="50" rx="16" fill="url(#greenGrad)"/>
+    <rect width="540" height="16" y="34" fill="#1e293b"/>
+    <text x="270" y="33" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="white">AFTER: Snowcore Reliability Copilot</text>
+    
+    <g transform="translate(30, 80)">
+      <circle cx="15" cy="12" r="8" fill="#30D158" opacity="0.3"/>
+      <circle cx="15" cy="12" r="4" fill="#30D158"/>
+      <text x="35" y="17" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#f1f5f9">GNN-Based Cross-Asset Detection</text>
+      <text x="35" y="40" font-family="Inter, Arial, sans-serif" font-size="12" fill="#94a3b8">Anomaly propagation across asset graph</text>
+      <text x="35" y="58" font-family="Inter, Arial, sans-serif" font-size="12" fill="#30D158">Predict downstream failures before they occur</text>
+    </g>
+    
+    <g transform="translate(30, 155)">
+      <circle cx="15" cy="12" r="8" fill="#30D158" opacity="0.3"/>
+      <circle cx="15" cy="12" r="4" fill="#30D158"/>
+      <text x="35" y="17" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#f1f5f9">Expected-Cost Economic Ranking</text>
+      <text x="35" y="40" font-family="Inter, Arial, sans-serif" font-size="12" fill="#94a3b8">P(fail) x Cost vs PM Cost framework</text>
+      <text x="35" y="58" font-family="Inter, Arial, sans-serif" font-size="12" fill="#30D158">Net benefit optimization per asset</text>
+    </g>
+    
+    <g transform="translate(30, 230)">
+      <circle cx="15" cy="12" r="8" fill="#30D158" opacity="0.3"/>
+      <circle cx="15" cy="12" r="4" fill="#30D158"/>
+      <text x="35" y="17" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#f1f5f9">Natural Language RAG</text>
+      <text x="35" y="40" font-family="Inter, Arial, sans-serif" font-size="12" fill="#94a3b8">Instant search over CMMS + manuals</text>
+      <text x="35" y="58" font-family="Inter, Arial, sans-serif" font-size="12" fill="#30D158">"Has this happened before?" answered in seconds</text>
+    </g>
+    
+    <g transform="translate(30, 305)">
+      <circle cx="15" cy="12" r="8" fill="#30D158" opacity="0.3"/>
+      <circle cx="15" cy="12" r="4" fill="#30D158"/>
+      <text x="35" y="17" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#f1f5f9">Automatic Correlation Discovery</text>
+      <text x="35" y="40" font-family="Inter, Arial, sans-serif" font-size="12" fill="#94a3b8">Time-lagged analysis built-in</text>
+      <text x="35" y="58" font-family="Inter, Arial, sans-serif" font-size="12" fill="#30D158">Humidity → scrap correlation revealed instantly</text>
+    </g>
+    
+    <g transform="translate(30, 380)">
+      <circle cx="15" cy="12" r="8" fill="#30D158" opacity="0.3"/>
+      <circle cx="15" cy="12" r="4" fill="#30D158"/>
+      <text x="35" y="17" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="600" fill="#f1f5f9">Per-Asset Financial Dashboard</text>
+      <text x="35" y="40" font-family="Inter, Arial, sans-serif" font-size="12" fill="#94a3b8">Expected loss + PM ROI per asset</text>
+      <text x="35" y="58" font-family="Inter, Arial, sans-serif" font-size="12" fill="#30D158">$41K net savings visible in priority queue</text>
+    </g>
+  </g>
+</svg>

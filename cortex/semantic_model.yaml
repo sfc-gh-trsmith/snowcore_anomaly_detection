@@ -1,0 +1,458 @@
+name: snowcore_pdm_semantic_model
+description: |
+  Semantic model for Snowcore Industries Predictive Maintenance analytics.
+  Enables natural language queries about asset health, maintenance costs,
+  and production quality metrics.
+
+tables:
+  - name: FINANCIAL_SUMMARY
+    base_table:
+      database: SNOWCORE_PDM
+      schema: DATA_MART
+      table: FINANCIAL_SUMMARY
+    description: Monthly aggregated financial metrics for downtime, quality, and maintenance costs
+    
+    dimensions:
+      - name: month
+        expr: MONTH
+        description: Calendar month of the metrics
+        data_type: DATE
+        
+      - name: scenario
+        expr: SCENARIO
+        description: Before or After implementation of anomaly detection system
+        data_type: TEXT
+        sample_values:
+          - BEFORE
+          - AFTER
+    
+    measures:
+      - name: downtime_hours
+        expr: DOWNTIME_HOURS
+        description: Total unplanned downtime hours
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: downtime_cost_usd
+        expr: DOWNTIME_COST_USD
+        description: Financial cost of unplanned downtime in USD
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: scrap_count
+        expr: SCRAP_COUNT
+        description: Number of scrapped units
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: scrap_cost_usd
+        expr: SCRAP_COST_USD
+        description: Financial cost of scrapped units in USD
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: corrective_maint_hrs
+        expr: CORRECTIVE_MAINT_HRS
+        description: Hours spent on corrective maintenance (reactive)
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: preventive_maint_hrs
+        expr: PREVENTIVE_MAINT_HRS
+        description: Hours spent on preventive maintenance (proactive)
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: labor_variance_usd
+        expr: LABOR_VARIANCE_USD
+        description: Labor cost variance from overtime and unplanned work
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: oee_pct
+        expr: OEE_PCT
+        description: Overall Equipment Effectiveness percentage
+        data_type: NUMBER
+        default_aggregation: avg
+
+  - name: MAINTENANCE_LOGS
+    base_table:
+      database: SNOWCORE_PDM
+      schema: ATOMIC
+      table: MAINTENANCE_LOGS
+    description: Historical maintenance work orders and resolutions
+    
+    dimensions:
+      - name: asset_id
+        expr: ASSET_ID
+        description: Unique identifier for the asset
+        data_type: TEXT
+        sample_values:
+          - AUTOCLAVE_01
+          - AUTOCLAVE_02
+          - CNC_MILL_01
+          - CNC_MILL_02
+          - LAYUP_BOT_01
+          - LAYUP_BOT_02
+          
+      - name: failure_reason
+        expr: FAILURE_REASON
+        description: Category of failure or maintenance trigger
+        data_type: TEXT
+        sample_values:
+          - Vacuum Leak
+          - Temperature Excursion
+          - Pressure Drop
+          - Vibration Alert
+          - Coolant Flow
+          - Humidity Alarm
+          
+      - name: technician_id
+        expr: TECHNICIAN_ID
+        description: ID of technician who performed the work
+        data_type: TEXT
+        
+      - name: work_order_id
+        expr: WORK_ORDER_ID
+        description: Work order reference number
+        data_type: TEXT
+        
+      - name: timestamp
+        expr: TIMESTAMP
+        description: Date and time of maintenance event
+        data_type: TIMESTAMP
+    
+    measures:
+      - name: downtime_minutes
+        expr: DOWNTIME_MINUTES
+        description: Duration of downtime in minutes
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: maintenance_event_count
+        expr: '1'
+        description: Count of maintenance events
+        data_type: NUMBER
+        default_aggregation: count
+
+  - name: ANOMALY_EVENTS
+    base_table:
+      database: SNOWCORE_PDM
+      schema: PDM
+      table: ANOMALY_EVENTS
+    description: Detected anomalies from ML models with severity and root cause
+    
+    dimensions:
+      - name: asset_id
+        expr: ASSET_ID
+        description: Asset where anomaly was detected
+        data_type: TEXT
+        
+      - name: anomaly_type
+        expr: ANOMALY_TYPE
+        description: Category of anomaly
+        data_type: TEXT
+        sample_values:
+          - VACUUM_LEAK
+          - TEMP_EXCURSION
+          - PRESSURE_DROP
+          - VIBRATION_SPIKE
+          - HUMIDITY_ALERT
+          
+      - name: severity
+        expr: SEVERITY
+        description: Severity level of the anomaly
+        data_type: TEXT
+        sample_values:
+          - LOW
+          - MEDIUM
+          - HIGH
+          
+      - name: root_cause
+        expr: ROOT_CAUSE
+        description: Identified or suspected root cause
+        data_type: TEXT
+        
+      - name: resolved
+        expr: RESOLVED
+        description: Whether the anomaly has been resolved
+        data_type: BOOLEAN
+        
+      - name: timestamp
+        expr: TIMESTAMP
+        description: Time when anomaly was detected
+        data_type: TIMESTAMP
+    
+    measures:
+      - name: anomaly_score
+        expr: ANOMALY_SCORE
+        description: Confidence score of anomaly detection (0-1)
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: anomaly_count
+        expr: '1'
+        description: Count of anomaly events
+        data_type: NUMBER
+        default_aggregation: count
+
+  - name: CURE_RESULTS
+    base_table:
+      database: SNOWCORE_PDM
+      schema: PDM
+      table: CURE_RESULTS
+    description: Autoclave cure results with humidity correlation data
+    
+    dimensions:
+      - name: batch_id
+        expr: BATCH_ID
+        description: Production batch identifier
+        data_type: TEXT
+        
+      - name: autoclave_id
+        expr: AUTOCLAVE_ID
+        description: Which autoclave processed the batch
+        data_type: TEXT
+        sample_values:
+          - AUTOCLAVE_01
+          - AUTOCLAVE_02
+          
+      - name: scrap_flag
+        expr: SCRAP_FLAG
+        description: Whether the batch was scrapped
+        data_type: BOOLEAN
+        
+      - name: failure_mode
+        expr: FAILURE_MODE
+        description: Type of failure if scrapped
+        data_type: TEXT
+        sample_values:
+          - MOISTURE_DELAMINATION
+          - CURE_DEFECT
+          
+      - name: cure_timestamp
+        expr: CURE_TIMESTAMP
+        description: Timestamp when cure cycle completed
+        data_type: TIMESTAMP
+    
+    measures:
+      - name: layup_humidity_avg
+        expr: LAYUP_HUMIDITY_AVG
+        description: Average humidity during layup phase
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: layup_humidity_peak
+        expr: LAYUP_HUMIDITY_PEAK
+        description: Peak humidity during layup phase
+        data_type: NUMBER
+        default_aggregation: max
+        
+      - name: delamination_score
+        expr: DELAMINATION_SCORE
+        description: Delamination severity score (0-100)
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: batch_count
+        expr: '1'
+        description: Count of batches
+        data_type: NUMBER
+        default_aggregation: count
+        
+      - name: scrap_count
+        expr: CASE WHEN SCRAP_FLAG THEN 1 ELSE 0 END
+        description: Count of scrapped batches
+        data_type: NUMBER
+        default_aggregation: sum
+
+  - name: MAINTENANCE_DECISIONS
+    base_table:
+      database: SNOWCORE_PDM
+      schema: PDM
+      table: MAINTENANCE_DECISIONS_LIVE
+    description: Real-time maintenance recommendations based on expected cost analysis comparing P(failure) x C_unplanned vs C_PM
+    
+    dimensions:
+      - name: asset_id
+        expr: ASSET_ID
+        description: Unique identifier for the asset
+        data_type: TEXT
+        sample_values:
+          - AUTOCLAVE_01
+          - AUTOCLAVE_02
+          - CNC_MILL_01
+          - CNC_MILL_02
+          - LAYUP_ROOM
+          
+      - name: asset_type
+        expr: ASSET_TYPE
+        description: Category of asset
+        data_type: TEXT
+        sample_values:
+          - AUTOCLAVE
+          - CNC
+          - ROBOT
+          - ENVIRONMENT
+          
+      - name: recommendation
+        expr: RECOMMENDATION
+        description: Maintenance action recommendation based on cost-benefit analysis
+        data_type: TEXT
+        sample_values:
+          - URGENT
+          - PLAN_PM
+          - MONITOR
+          
+      - name: target_window
+        expr: TARGET_WINDOW
+        description: Recommended time window for maintenance action
+        data_type: TEXT
+        sample_values:
+          - THIS_SHIFT
+          - NEXT_STOP
+          - WITHIN_7D
+    
+    measures:
+      - name: p_fail_7d
+        expr: P_FAIL_7D
+        description: Probability of failure in next 7 days (0-1)
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: p_fail_24h
+        expr: P_FAIL_24H
+        description: Probability of failure in next 24 hours (0-1)
+        data_type: NUMBER
+        default_aggregation: avg
+        
+      - name: c_unplanned_usd
+        expr: C_UNPLANNED_USD
+        description: Total cost of unplanned downtime including lost production, repair, and scrap risk
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: c_pm_usd
+        expr: C_PM_USD
+        description: Cost of planned preventive maintenance including labor, parts, and planned downtime
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: expected_unplanned_cost
+        expr: EXPECTED_UNPLANNED_COST
+        description: Expected cost of running to failure (P_fail x C_unplanned)
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: net_benefit
+        expr: NET_BENEFIT
+        description: Net savings from doing PM now vs running to failure (positive means PM is recommended)
+        data_type: NUMBER
+        default_aggregation: sum
+        
+      - name: confidence
+        expr: CONFIDENCE
+        description: Model confidence in the failure probability estimate
+        data_type: NUMBER
+        default_aggregation: avg
+
+verified_queries:
+  - name: highest_downtime_vacuum_leak
+    question: Which asset had the highest downtime due to 'Vacuum Leak' last quarter?
+    verified_sql: |
+      SELECT ASSET_ID, SUM(DOWNTIME_MINUTES) as total_downtime
+      FROM SNOWCORE_PDM.ATOMIC.MAINTENANCE_LOGS
+      WHERE FAILURE_REASON = 'Vacuum Leak'
+        AND TIMESTAMP >= DATEADD('quarter', -1, CURRENT_DATE())
+      GROUP BY ASSET_ID
+      ORDER BY total_downtime DESC
+      LIMIT 5
+    verified_at: '2026-02-04'
+    verified_by: system
+    
+  - name: downtime_cost_by_month
+    question: What is the total downtime cost by month?
+    verified_sql: |
+      SELECT MONTH, SUM(DOWNTIME_COST_USD) as total_cost
+      FROM SNOWCORE_PDM.DATA_MART.FINANCIAL_SUMMARY
+      GROUP BY MONTH
+      ORDER BY MONTH DESC
+    verified_at: '2026-02-04'
+    verified_by: system
+    
+  - name: scrap_rate_by_humidity
+    question: What is the scrap rate for high humidity batches vs normal?
+    verified_sql: |
+      SELECT 
+        CASE WHEN LAYUP_HUMIDITY_PEAK > 65 THEN 'HIGH_HUMIDITY' ELSE 'NORMAL' END as humidity_class,
+        COUNT(*) as batches,
+        SUM(CASE WHEN SCRAP_FLAG THEN 1 ELSE 0 END) as scrap_count,
+        ROUND(SUM(CASE WHEN SCRAP_FLAG THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 1) as scrap_rate_pct
+      FROM SNOWCORE_PDM.PDM.CURE_RESULTS
+      GROUP BY 1
+    verified_at: '2026-02-04'
+    verified_by: system
+    
+  - name: oee_improvement
+    question: How much has OEE improved since implementing anomaly detection?
+    verified_sql: |
+      SELECT 
+        SCENARIO,
+        ROUND(AVG(OEE_PCT), 1) as avg_oee
+      FROM SNOWCORE_PDM.DATA_MART.FINANCIAL_SUMMARY
+      GROUP BY SCENARIO
+      ORDER BY SCENARIO
+    verified_at: '2026-02-04'
+    verified_by: system
+    
+  - name: unresolved_anomalies
+    question: How many unresolved anomalies are there by severity?
+    verified_sql: |
+      SELECT SEVERITY, COUNT(*) as count
+      FROM SNOWCORE_PDM.PDM.ANOMALY_EVENTS
+      WHERE RESOLVED = FALSE
+      GROUP BY SEVERITY
+      ORDER BY 
+        CASE SEVERITY WHEN 'HIGH' THEN 1 WHEN 'MEDIUM' THEN 2 ELSE 3 END
+    verified_at: '2026-02-04'
+    verified_by: system
+    
+  - name: assets_needing_pm
+    question: Which assets should have preventive maintenance scheduled based on cost-benefit analysis?
+    verified_sql: |
+      SELECT ASSET_ID, P_FAIL_7D, EXPECTED_UNPLANNED_COST, C_PM_USD, NET_BENEFIT, RECOMMENDATION, TARGET_WINDOW
+      FROM SNOWCORE_PDM.PDM.MAINTENANCE_DECISIONS_LIVE
+      WHERE RECOMMENDATION IN ('URGENT', 'PLAN_PM')
+      ORDER BY NET_BENEFIT DESC
+    verified_at: '2026-02-05'
+    verified_by: system
+    
+  - name: maintenance_priority_queue
+    question: What is the maintenance priority queue sorted by potential savings?
+    verified_sql: |
+      SELECT 
+        ASSET_ID,
+        ROUND(P_FAIL_7D * 100, 0) AS RISK_PCT,
+        EXPECTED_UNPLANNED_COST,
+        C_PM_USD,
+        NET_BENEFIT,
+        RECOMMENDATION,
+        TARGET_WINDOW
+      FROM SNOWCORE_PDM.PDM.MAINTENANCE_DECISIONS_LIVE
+      ORDER BY NET_BENEFIT DESC
+    verified_at: '2026-02-05'
+    verified_by: system
+    
+  - name: expected_loss_by_asset
+    question: What is the expected loss from unplanned failures for each asset?
+    verified_sql: |
+      SELECT 
+        ASSET_ID,
+        ASSET_TYPE,
+        ROUND(P_FAIL_7D * 100, 1) AS FAILURE_RISK_PCT,
+        C_UNPLANNED_USD AS UNPLANNED_COST,
+        EXPECTED_UNPLANNED_COST AS EXPECTED_LOSS
+      FROM SNOWCORE_PDM.PDM.MAINTENANCE_DECISIONS_LIVE
+      ORDER BY EXPECTED_UNPLANNED_COST DESC
+    verified_at: '2026-02-05'
+    verified_by: system

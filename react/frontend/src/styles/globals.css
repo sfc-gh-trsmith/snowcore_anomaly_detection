@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-navy-900 text-slate-200 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-navy-800/80 backdrop-blur border border-navy-700/50 rounded-xl p-6;
+  }
+
+  .card-glow:hover {
+    box-shadow: 0 0 20px rgba(41, 181, 232, 0.15);
+    border-color: rgba(41, 181, 232, 0.3);
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-accent-blue to-cyan-500 text-white font-medium px-4 py-2 rounded-lg hover:shadow-lg hover:shadow-accent-blue/30 active:scale-95 transition-all;
+  }
+
+  .btn-secondary {
+    @apply bg-navy-700 text-slate-200 font-medium px-4 py-2 rounded-lg hover:bg-navy-600 transition-all;
+  }
+}
+
+@layer utilities {
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

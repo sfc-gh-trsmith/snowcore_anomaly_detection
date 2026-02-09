@@ -1,0 +1,25 @@
+definition_version: 2
+
+entities:
+  anomaly_detection_training:
+    type: notebook
+    identifier:
+      name: ANOMALY_DETECTION_TRAINING
+      database: SNOWCORE_PDM
+      schema: PDM
+    notebook_file: anomaly_detection_training.ipynb
+    query_warehouse: COMPUTE_WH
+
+  gnn_cross_asset:
+    type: notebook
+    identifier:
+      name: GNN_CROSS_ASSET
+      database: SNOWCORE_PDM
+      schema: PDM
+    notebook_file: gnn_cross_asset.ipynb
+    runtime_name: SYSTEM$GPU_RUNTIME
+    compute_pool: SNOWCORE_PDM_GPU_POOL
+    query_warehouse: COMPUTE_WH
+    external_access_integrations:
+      - SNOWCORE_PDM_PYPI_ACCESS
+    idle_auto_shutdown_time_seconds: 1800

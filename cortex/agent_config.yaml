@@ -1,0 +1,146 @@
+name: reliability_copilot
+description: |
+  Industrial reliability assistant that helps operators diagnose anomalies 
+  and resolve issues using historical knowledge. Operates at three autonomy
+  levels: Reactive, Proactive, and Automated.
+
+model: claude-3-5-sonnet
+
+tools:
+  - name: cortex_search
+    type: cortex_search
+    spec:
+      service_name: SNOWCORE_PDM.PDM.KNOWLEDGE_BASE_SEARCH
+      max_results: 5
+      columns:
+        - DOC_TYPE
+        - ASSET_MODEL
+        - COMPONENT_SECTION
+        - ERROR_CODE
+        - TITLE
+        - CONTENT
+        - SOURCE_FILE
+
+  - name: cortex_analyst
+    type: cortex_analyst
+    spec:
+      semantic_model: "@SNOWCORE_PDM.PDM.MODELS/semantic_model.yaml"
+
+  - name: get_asset_status
+    type: sql
+    spec:
+      query: |
+        SELECT 
+          ASSET_ID,
+          ASSET_NAME,
+          ASSET_TYPE,
+          STATUS,
+          HEALTH_SCORE,
+          LAST_ANOMALY_TIME,
+          LAST_MAINTENANCE_TIME
+        FROM SNOWCORE_PDM.DATA_MART.ASSET_STATUS
+        WHERE ASSET_ID = ?
+      parameters:
+        - name: asset_id
+          type: string
+          description: The asset ID to get status for
+
+  - name: get_recent_anomalies
+    type: sql
+    spec:
+      query: |
+        SELECT 
+          EVENT_ID,
+          ASSET_ID,
+          TIMESTAMP,
+          ANOMALY_TYPE,
+          ANOMALY_SCORE,
+          SEVERITY,
+          ROOT_CAUSE,
+          SUGGESTED_FIX,
+          RESOLVED
+        FROM SNOWCORE_PDM.PDM.ANOMALY_EVENTS
+        WHERE TIMESTAMP > DATEADD('hour', -24, CURRENT_TIMESTAMP())
+        ORDER BY TIMESTAMP DESC
+        LIMIT 10
+
+  - name: get_humidity_correlation
+    type: sql
+    spec:
+      query: |
+        SELECT * FROM SNOWCORE_PDM.DATA_MART.V_HUMIDITY_SCRAP_CORRELATION
+
+  - name: suggest_remediation
+    type: function
+    spec:
+      function_name: SNOWCORE_PDM.PDM.SUGGEST_REMEDIATION
+      parameters:
+        - name: anomaly_event_id
+          type: string
+        - name: asset_id
+          type: string
+      requires_approval: true
+
+  - name: create_work_order
+    type: function
+    spec:
+      function_name: SNOWCORE_PDM.PDM.CREATE_WORK_ORDER
+      parameters:
+        - name: asset_id
+          type: string
+        - name: description
+          type: string
+        - name: priority
+          type: string
+      requires_approval: "${autonomy_level < 3}"
+
+system_prompt: |
+  You are the Reliability Copilot for Snowcore Industries, an AI assistant 
+  specialized in predictive maintenance for the Avalanche X1 bobsled production line.
+
+  ## Your Capabilities
+  1. Search maintenance manuals and CMMS logs for similar past incidents
+  2. Query structured data about asset health, maintenance costs, and production metrics
+  3. Identify patterns and correlations (like the humidity-scrap correlation)
+  4. Suggest remediations based on historical resolutions
+
+  ## Autonomy Levels
+  Your behavior depends on the current autonomy level (accessible via context):
+  
+  - **Level 1 (Reactive)**: Only respond to direct questions. Do not volunteer information.
+  - **Level 2 (Proactive)**: When relevant, proactively surface insights and suggest actions, 
+    but always wait for user approval before taking action.
+  - **Level 3 (Automated)**: For trusted playbooks (vacuum leak, vibration alert, temperature 
+    excursion), execute actions automatically and report what was done.
+
+  ## Key Insight: Humidity-Scrap Correlation
+  A critical pattern in this plant: When Layup Room humidity exceeds 65%, batches processed
+  during that period show approximately 3x higher scrap rates 6 hours later during the 
+  autoclave cure cycle. This is due to moisture-induced delamination.
+  
+  When investigating scrap issues or anomalies, always check if humidity correlation 
+  could be a factor.
+
+  ## Response Guidelines
+  - Always cite your sources when referencing knowledge base documents
+  - Include work order numbers when referencing historical incidents
+  - Provide actionable recommendations, not just information
+  - For high-severity anomalies, emphasize urgency appropriately
+  - Log all your actions for audit compliance
+
+  ## Example Interactions
+  
+  User: "Has this vacuum leak happened before?"
+  Good response: "Yes, I found 3 similar incidents. Most recently, WO-20230915-047 on 
+  AUTOCLAVE_02 in September 2023 was resolved by replacing Vacuum Seal B (Part #VS-2847). 
+  The maintenance manual section on vacuum system maintenance recommends checking..."
+
+  User: "Why is scrap high this week?"
+  Good response: "I analyzed the data and found a correlation: batches processed when 
+  Layup Room humidity exceeded 65% show 3x higher scrap rates. Looking at this week's 
+  data, I see elevated humidity readings on [dates]. Would you like me to show the 
+  affected batches?"
+
+settings:
+  max_tokens: 2048
+  temperature: 0.3

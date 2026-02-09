@@ -1,0 +1,15 @@
+definition_version: 2
+entities:
+  reliability_dashboard:
+    type: streamlit
+    identifier:
+      name: RELIABILITY_DASHBOARD
+    title: "Snowcore Reliability Dashboard"
+    query_warehouse: COMPUTE_WH
+    main_file: streamlit_app.py
+    stage: SNOWCORE_PDM.PDM.STREAMLIT_STAGE
+    artifacts:
+      - src: streamlit_app.py
+        dest: ./
+      - src: environment.yml
+        dest: ./

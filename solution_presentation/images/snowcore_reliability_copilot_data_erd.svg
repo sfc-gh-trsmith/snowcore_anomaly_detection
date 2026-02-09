@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="650" viewBox="0 0 1200 650" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#29B5E8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a8bb8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#30D158;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#22a045;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6d3fd9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F39C12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c77c0e;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="6" flood-opacity="0.2"/>
+    </filter>
+    <marker id="fk" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <circle cx="4" cy="4" r="3" fill="#29B5E8"/>
+    </marker>
+  </defs>
+  
+  <rect width="1200" height="650" fill="#0f172a"/>
+  
+  <text x="600" y="40" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="#f1f5f9">Snowcore Reliability Copilot Data Model</text>
+  <text x="600" y="65" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#64748b">Entity Relationship Diagram</text>
+  
+  <g transform="translate(40, 100)" filter="url(#shadow)">
+    <rect width="220" height="200" rx="12" fill="#1e293b"/>
+    <rect width="220" height="35" rx="12" fill="url(#orangeGrad)"/>
+    <rect width="220" height="12" y="23" fill="#1e293b"/>
+    <text x="110" y="24" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="white">RAW.IOT_STREAMING</text>
+    
+    <g transform="translate(15, 50)">
+      <text x="0" y="15" font-family="Inter, Arial, sans-serif" font-size="10" fill="#F39C12">PK</text>
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#f1f5f9">MESSAGE_ID</text>
+      <text x="140" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 70)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">TOPIC</text>
+      <text x="140" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 90)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">PAYLOAD</text>
+      <text x="140" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARIANT</text>
+    </g>
+    <g transform="translate(15, 110)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">EDGE_NODE_ID</text>
+      <text x="140" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 130)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">DEVICE_ID</text>
+      <text x="140" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 150)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">INGEST_TIME</text>
+      <text x="140" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">TIMESTAMP</text>
+    </g>
+  </g>
+  
+  <g transform="translate(320, 100)" filter="url(#shadow)">
+    <rect width="240" height="220" rx="12" fill="#1e293b"/>
+    <rect width="240" height="35" rx="12" fill="url(#blueGrad)"/>
+    <rect width="240" height="12" y="23" fill="#1e293b"/>
+    <text x="120" y="24" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="white">ATOMIC.ASSET_SENSORS</text>
+    
+    <g transform="translate(15, 50)">
+      <text x="0" y="15" font-family="Inter, Arial, sans-serif" font-size="10" fill="#29B5E8">PK</text>
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#f1f5f9">ASSET_ID</text>
+      <text x="150" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 70)">
+      <text x="0" y="15" font-family="Inter, Arial, sans-serif" font-size="10" fill="#29B5E8">PK</text>
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#f1f5f9">EVENT_TIME</text>
+      <text x="150" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">TIMESTAMP</text>
+    </g>
+    <g transform="translate(15, 90)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">TEMPERATURE_C</text>
+      <text x="150" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 110)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">PRESSURE_PSI</text>
+      <text x="150" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 130)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">HUMIDITY_PCT</text>
+      <text x="150" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 150)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">VIBRATION_G</text>
+      <text x="150" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 170)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">VACUUM_MBAR</text>
+      <text x="150" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+  </g>
+  
+  <line x1="260" y1="200" x2="320" y2="200" stroke="#29B5E8" stroke-width="2" stroke-dasharray="5"/>
+  
+  <g transform="translate(620, 100)" filter="url(#shadow)">
+    <rect width="260" height="240" rx="12" fill="#1e293b"/>
+    <rect width="260" height="35" rx="12" fill="url(#greenGrad)"/>
+    <rect width="260" height="12" y="23" fill="#1e293b"/>
+    <text x="130" y="24" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="white">PDM.FEATURE_STORE</text>
+    
+    <g transform="translate(15, 50)">
+      <text x="0" y="15" font-family="Inter, Arial, sans-serif" font-size="10" fill="#30D158">PK</text>
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#f1f5f9">ASSET_ID</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 70)">
+      <text x="0" y="15" font-family="Inter, Arial, sans-serif" font-size="10" fill="#30D158">PK</text>
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#f1f5f9">WINDOW_END</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">TIMESTAMP</text>
+    </g>
+    <g transform="translate(15, 90)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">TEMP_MEAN</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 110)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">TEMP_STD</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 130)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">PRESSURE_DRIFT</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 150)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">VIBRATION_PEAK</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 170)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">HUMIDITY_LAG_6H</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 190)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">HEALTH_SCORE</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+  </g>
+  
+  <line x1="560" y1="200" x2="620" y2="200" stroke="#29B5E8" stroke-width="2" stroke-dasharray="5"/>
+  
+  <g transform="translate(940, 100)" filter="url(#shadow)">
+    <rect width="220" height="240" rx="12" fill="#1e293b"/>
+    <rect width="220" height="35" rx="12" fill="url(#greenGrad)"/>
+    <rect width="220" height="12" y="23" fill="#1e293b"/>
+    <text x="110" y="24" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="white">PDM.ANOMALY_EVENTS</text>
+    
+    <g transform="translate(15, 50)">
+      <text x="0" y="15" font-family="Inter, Arial, sans-serif" font-size="10" fill="#30D158">PK</text>
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#f1f5f9">EVENT_ID</text>
+      <text x="130" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 70)">
+      <text x="0" y="15" font-family="Inter, Arial, sans-serif" font-size="10" fill="#29B5E8">FK</text>
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">ASSET_ID</text>
+      <text x="130" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 90)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">TIMESTAMP</text>
+      <text x="130" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">TIMESTAMP</text>
+    </g>
+    <g transform="translate(15, 110)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">ANOMALY_TYPE</text>
+      <text x="130" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 130)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">ANOMALY_SCORE</text>
+      <text x="130" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 150)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">SEVERITY</text>
+      <text x="130" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 170)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">ROOT_CAUSE</text>
+      <text x="130" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 190)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">SUGGESTED_FIX</text>
+      <text x="130" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+  </g>
+  
+  <line x1="880" y1="200" x2="940" y2="200" stroke="#29B5E8" stroke-width="2" stroke-dasharray="5"/>
+  
+  <g transform="translate(40, 380)" filter="url(#shadow)">
+    <rect width="260" height="220" rx="12" fill="#1e293b"/>
+    <rect width="260" height="35" rx="12" fill="url(#purpleGrad)"/>
+    <rect width="260" height="12" y="23" fill="#1e293b"/>
+    <text x="130" y="24" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="white">PDM.MAINTENANCE_DECISIONS</text>
+    
+    <g transform="translate(15, 50)">
+      <text x="0" y="15" font-family="Inter, Arial, sans-serif" font-size="10" fill="#8B5CF6">PK</text>
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#f1f5f9">ASSET_ID</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 70)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">P_FAIL_7D</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 90)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">EXPECTED_UNPLANNED_COST</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 110)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">C_PM_USD</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 130)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">NET_BENEFIT</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 150)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">RECOMMENDATION</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 170)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">PM_WINDOW</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+  </g>
+  
+  <g transform="translate(360, 380)" filter="url(#shadow)">
+    <rect width="260" height="200" rx="12" fill="#1e293b"/>
+    <rect width="260" height="35" rx="12" fill="url(#purpleGrad)"/>
+    <rect width="260" height="12" y="23" fill="#1e293b"/>
+    <text x="130" y="24" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="white">PDM.CURE_RESULTS</text>
+    
+    <g transform="translate(15, 50)">
+      <text x="0" y="15" font-family="Inter, Arial, sans-serif" font-size="10" fill="#8B5CF6">PK</text>
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#f1f5f9">BATCH_ID</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 70)">
+      <text x="0" y="15" font-family="Inter, Arial, sans-serif" font-size="10" fill="#29B5E8">FK</text>
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">AUTOCLAVE_ID</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 90)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">CURE_TIMESTAMP</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">TIMESTAMP</text>
+    </g>
+    <g transform="translate(15, 110)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">LAYUP_HUMIDITY_AVG</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 130)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">SCRAP_FLAG</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">BOOLEAN</text>
+    </g>
+    <g transform="translate(15, 150)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">DELAMINATION_SCORE</text>
+      <text x="170" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+  </g>
+  
+  <g transform="translate(680, 380)" filter="url(#shadow)">
+    <rect width="240" height="180" rx="12" fill="#1e293b"/>
+    <rect width="240" height="35" rx="12" fill="#EC4899"/>
+    <rect width="240" height="12" y="23" fill="#1e293b"/>
+    <text x="120" y="24" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700" fill="white">SEARCH.KNOWLEDGE_BASE</text>
+    
+    <g transform="translate(15, 50)">
+      <text x="0" y="15" font-family="Inter, Arial, sans-serif" font-size="10" fill="#EC4899">PK</text>
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#f1f5f9">DOC_ID</text>
+      <text x="150" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 70)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">DOC_TYPE</text>
+      <text x="150" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 90)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">ASSET_MODEL</text>
+      <text x="150" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 110)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">CONTENT_CHUNK</text>
+      <text x="150" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VARCHAR</text>
+    </g>
+    <g transform="translate(15, 130)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">EMBEDDING</text>
+      <text x="150" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">VECTOR</text>
+    </g>
+  </g>
+  
+  <g transform="translate(980, 380)" filter="url(#shadow)">
+    <rect width="180" height="160" rx="12" fill="#1e293b"/>
+    <rect width="180" height="35" rx="12" fill="#EC4899"/>
+    <rect width="180" height="12" y="23" fill="#1e293b"/>
+    <text x="90" y="24" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" fill="white">DATA_MART.FINANCIAL</text>
+    
+    <g transform="translate(15, 50)">
+      <text x="0" y="15" font-family="Inter, Arial, sans-serif" font-size="10" fill="#EC4899">PK</text>
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#f1f5f9">MONTH</text>
+      <text x="110" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">DATE</text>
+    </g>
+    <g transform="translate(15, 70)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">DOWNTIME_COST</text>
+      <text x="110" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 90)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">SCRAP_COST</text>
+      <text x="110" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+    <g transform="translate(15, 110)">
+      <text x="25" y="15" font-family="mono, monospace" font-size="10" fill="#94a3b8">MAINT_COST</text>
+      <text x="110" y="15" font-family="Inter, Arial, sans-serif" font-size="9" fill="#64748b">FLOAT</text>
+    </g>
+  </g>
+  
+  <path d="M440 320 Q440 350 320 380" stroke="#29B5E8" stroke-width="2" fill="none" stroke-dasharray="5" marker-end="url(#fk)"/>
+  <path d="M750 340 Q750 370 490 380" stroke="#29B5E8" stroke-width="2" fill="none" stroke-dasharray="5" marker-end="url(#fk)"/>
+</svg>
